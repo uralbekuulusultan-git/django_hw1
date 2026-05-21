@@ -3,7 +3,7 @@ from unittest.mock import patch
 from django.test import TestCase
 from django.urls import reverse
 
-from .cat import Cat
+from .models import Cat
 
 
 class CatLogicTests(TestCase):
@@ -32,7 +32,7 @@ class CatLogicTests(TestCase):
         self.assertEqual(cat.happiness, 35)
         self.assertEqual(cat.fullness, 40)
 
-    @patch('cat.cat.randint', return_value=2)
+    @patch('cat.models.randint', return_value=2)
     def test_play_changes_stats_without_rage(self, _):
         cat = Cat(name='Барсик')
 
@@ -41,7 +41,7 @@ class CatLogicTests(TestCase):
         self.assertEqual(cat.happiness, 55)
         self.assertEqual(cat.fullness, 30)
 
-    @patch('cat.cat.randint', return_value=1)
+    @patch('cat.models.randint', return_value=1)
     def test_play_can_make_cat_angry(self, _):
         cat = Cat(name='Барсик')
 
@@ -72,7 +72,8 @@ class CatViewTests(TestCase):
         response = self.client.post(reverse('index'), {'name': 'Мурка'})
 
         self.assertRedirects(response, reverse('cat_info'))
-        self.assertEqual(self.client.session['cat']['name'], 'Мурка')
+        cat = Cat.objects.get(id=self.client.session['cat_id'])
+        self.assertEqual(cat.name, 'Мурка')
 
     def test_info_page_shows_initial_cat_stats(self):
         self.client.post(reverse('index'), {'name': 'Мурка'})
@@ -90,7 +91,6 @@ class CatViewTests(TestCase):
         response = self.client.post(reverse('cat_info'), {'action': 'feed'})
 
         self.assertRedirects(response, reverse('cat_info'))
-        self.assertEqual(self.client.session['cat']['fullness'], 55)
-        self.assertEqual(self.client.session['cat']['happiness'], 45)
-
-# Create your tests here.
+        cat = Cat.objects.get(id=self.client.session['cat_id'])
+        self.assertEqual(cat.fullness, 55)
+        self.assertEqual(cat.happiness, 45)
