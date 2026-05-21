@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Спящий кот">
+  <rect width="240" height="240" rx="36" fill="#b9addb"/>
+  <path d="M56 112 74 54l38 38h16l38-38 18 58c13 13 20 30 20 49 0 40-36 63-84 63s-84-23-84-63c0-19 7-36 20-49Z" fill="#f7f0df" stroke="#23312a" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M80 144h29" stroke="#23312a" stroke-width="7" stroke-linecap="round"/>
+  <path d="M131 144h29" stroke="#23312a" stroke-width="7" stroke-linecap="round"/>
+  <path d="M113 164h14l-7 8Z" fill="#e56b6f"/>
+  <path d="M101 187c11 8 27 8 38 0" fill="none" stroke="#23312a" stroke-width="6" stroke-linecap="round"/>
+  <text x="168" y="74" fill="#23312a" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700">Z</text>
+  <text x="194" y="50" fill="#23312a" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">z</text>
+</svg>

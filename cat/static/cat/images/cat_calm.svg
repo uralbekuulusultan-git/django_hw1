@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Спокойный кот">
+  <rect width="240" height="240" rx="36" fill="#f2c14e"/>
+  <path d="M56 112 74 54l38 38h16l38-38 18 58c13 13 20 30 20 49 0 40-36 63-84 63s-84-23-84-63c0-19 7-36 20-49Z" fill="#f7f0df" stroke="#23312a" stroke-width="7" stroke-linejoin="round"/>
+  <circle cx="91" cy="142" r="9" fill="#23312a"/>
+  <circle cx="149" cy="142" r="9" fill="#23312a"/>
+  <path d="M113 165h14l-7 8Z" fill="#e56b6f"/>
+  <path d="M96 183c13 10 35 10 48 0" fill="none" stroke="#23312a" stroke-width="6" stroke-linecap="round"/>
+</svg>
